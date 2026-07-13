@@ -25047,7 +25047,4 @@ ${captureLines}` : capture.stack;
   })(undici);
   return undici.exports;
 }
-var undiciExports = requireUndici();
-export {
-  undiciExports as u
-};
+requireUndici();

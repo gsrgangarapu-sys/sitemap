@@ -1,5 +1,5 @@
 import { D as DOCUMENT_MODE } from "./parse5.mjs";
-import { d as isText, i as isTag, b as isComment, g as isDirective, P as ProcessingInstruction, T as Text, C as Comment, E as Element, D as Document } from "./domhandler.mjs";
+import { d as isText, i as isTag, e as isComment, g as isDirective, P as ProcessingInstruction, T as Text, C as Comment, E as Element, D as Document } from "./domhandler.mjs";
 function enquoteDoctypeId(id) {
   const quote = id.includes('"') ? "'" : '"';
   return quote + id + quote;

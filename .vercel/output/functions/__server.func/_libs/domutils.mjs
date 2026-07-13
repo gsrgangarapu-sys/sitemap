@@ -1,6 +1,6 @@
 import { r as render } from "./dom-serializer.mjs";
 import { E as ElementType } from "./domelementtype.mjs";
-import { h as hasChildren, b as isComment, d as isText, i as isTag, e as isCDATA, a as isDocument } from "./domhandler.mjs";
+import { h as hasChildren, i as isTag, b as isCDATA, d as isText, e as isComment, a as isDocument } from "./domhandler.mjs";
 function getOuterHTML(node, options) {
   return render(node, options);
 }

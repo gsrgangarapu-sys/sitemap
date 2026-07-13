@@ -81,7 +81,7 @@ function getResponse() {
 }
 var HEADERS = { TSS_SHELL: "X-TSS_SHELL" };
 async function getStartManifest(matchedRoutes) {
-  const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-BKB-0rI1.mjs");
+  const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-Cr8_81pv.mjs");
   const startManifest = tsrStartManifest();
   const rootRoute = startManifest.routes[rootRouteId] = startManifest.routes[rootRouteId] || {};
   rootRoute.assets = rootRoute.assets || [];
@@ -109,13 +109,13 @@ async function getStartManifest(matchedRoutes) {
   };
 }
 const manifest = {
-  "9cfc38e9b44415ad6c389b4a676fa47153360beb1e12690a186d5ed702712330": {
+  "1eb9c965c3accd8968c71a27032f353ce5febfe3106564dc848167eb5a29b1d1": {
     functionName: "fetchPageHtml_createServerFn_handler",
-    importer: () => import("./index-DMlS6c2o.mjs")
+    importer: () => import("./crawler.server-Bj-cRn9a.mjs")
   },
-  "ae6c19e73a84f0cbd0a9ae9f8e1489c498f770fdf4b230865bbca81e276bf24b": {
+  "55312efa061fa510ac20c8e856917448a68e2ad6e3215227c2e06d4fd1038f7f": {
     functionName: "checkRobotsTxt_createServerFn_handler",
-    importer: () => import("./index-DMlS6c2o.mjs")
+    importer: () => import("./crawler.server-Bj-cRn9a.mjs")
   }
 };
 async function getServerFnById(id, access) {
@@ -1094,7 +1094,7 @@ var baseManifestPromise;
 var cachedFinalManifestPromise;
 async function loadEntries() {
   const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-    import("./router-K7yy1D2f.mjs"),
+    import("./router-OnPWnQ8w.mjs").then((n) => n.r),
     import("./start-D3W4oQyB.mjs"),
     import("../__23tanstack-start-plugin-adapters-Cwee5PKy.mjs")
   ]);

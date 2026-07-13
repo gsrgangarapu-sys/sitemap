@@ -7501,7 +7501,6 @@ function parseFragment(fragmentContext, html, options) {
 }
 export {
   DOCUMENT_MODE as D,
-  Parser as P,
   parseFragment as a,
   parse as p,
   serializeOuter as s

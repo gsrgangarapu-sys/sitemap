@@ -1,49 +1,15 @@
-import { t as textContent, i as innerText, u as uniqueSort, n as nextElementSibling, p as prevElementSibling, g as getSiblings, a as getChildren, r as removeElement } from "./domutils.mjs";
-import { i as isTag, a as isDocument, h as hasChildren, D as Document, c as cloneNode, T as Text } from "./domhandler.mjs";
 import { R as Root, T as Tag, a as Text$1, C as Comment } from "./domelementtype.mjs";
-import { i as is$1, f as filter$1, s as select, a as some } from "./cheerio-select.mjs";
 import { s as serializeOuter, p as parse$2, a as parseFragment } from "./parse5.mjs";
 import { a as adapter } from "./parse5-htmlparser2-tree-adapter+[...].mjs";
+import { i as isTag, a as isDocument, h as hasChildren, D as Document, c as cloneNode, T as Text } from "./domhandler.mjs";
 import { r as render$1 } from "./dom-serializer.mjs";
-import { p as parseDocument, c as createDocumentStream } from "./htmlparser2.mjs";
-import { P as ParserStream } from "./parse5-parser-stream.mjs";
-import { D as DecodeStream, d as decodeBuffer } from "./encoding-sniffer.mjs";
-import { u as undiciExports } from "./undici.mjs";
-import { M as MIMEType } from "./whatwg-mimetype.mjs";
-import { Writable, finished } from "node:stream";
-import "./css-select.mjs";
-import "./boolbase.mjs";
-import "./react.mjs";
-import "./css-what.mjs";
-import "./nth-check.mjs";
-import "./entities.mjs";
+import { p as parseDocument } from "./htmlparser2.mjs";
+import { t as textContent, i as innerText, u as uniqueSort, n as nextElementSibling, p as prevElementSibling, g as getSiblings, a as getChildren, r as removeElement } from "./domutils.mjs";
+import { i as is$1, f as filter$1, s as select, a as some } from "./cheerio-select.mjs";
 import "./iconv-lite.mjs";
-import "string_decoder";
-import "./safer-buffer.mjs";
-import "buffer";
-import "./whatwg-encoding.mjs";
-import "node:assert";
-import "node:net";
-import "node:querystring";
-import "node:events";
-import "node:diagnostics_channel";
-import "node:util";
-import "node:tls";
-import "node:buffer";
-import "node:zlib";
-import "node:perf_hooks";
-import "node:util/types";
-import "node:sqlite";
-import "node:worker_threads";
-import "node:url";
-import "node:console";
-import "node:fs/promises";
-import "node:path";
-import "node:timers";
-import "node:dns";
-import "node:http";
-import "node:crypto";
-import "node:async_hooks";
+import "./encoding-sniffer.mjs";
+import "./undici.mjs";
+import "./whatwg-mimetype.mjs";
 const defaultOpts = {
   _useHtmlParser2: false
 };
@@ -1574,106 +1540,6 @@ function renderWithParse5(dom) {
 }
 const parse = getParse((content, options, isDocument2, context) => options._useHtmlParser2 ? parseDocument(content, options) : parseWithParse5(content, options, isDocument2, context));
 const load = getLoad(parse, (dom, options) => options._useHtmlParser2 ? render$1(dom, options) : renderWithParse5(dom));
-function loadBuffer(buffer, options = {}) {
-  const opts = flattenOptions(options);
-  const str = decodeBuffer(buffer, {
-    defaultEncoding: (opts === null || opts === void 0 ? void 0 : opts.xmlMode) ? "utf8" : "windows-1252",
-    ...options.encoding
-  });
-  return load(str, opts);
-}
-function _stringStream(options, cb) {
-  var _a2;
-  if (options === null || options === void 0 ? void 0 : options._useHtmlParser2) {
-    const parser = createDocumentStream((err, document) => cb(err, load(document, options)), options);
-    return new Writable({
-      decodeStrings: false,
-      write(chunk, _encoding, callback) {
-        if (typeof chunk !== "string") {
-          throw new TypeError("Expected a string");
-        }
-        parser.write(chunk);
-        callback();
-      },
-      final(callback) {
-        parser.end();
-        callback();
-      }
-    });
-  }
-  options !== null && options !== void 0 ? options : options = {};
-  (_a2 = options.treeAdapter) !== null && _a2 !== void 0 ? _a2 : options.treeAdapter = adapter;
-  if (options.scriptingEnabled !== false) {
-    options.scriptingEnabled = true;
-  }
-  const stream = new ParserStream(options);
-  finished(stream, (err) => cb(err, load(stream.document, options)));
-  return stream;
-}
-function stringStream(options, cb) {
-  return _stringStream(flattenOptions(options), cb);
-}
-function decodeStream(options, cb) {
-  var _a2;
-  const { encoding = {}, ...cheerioOptions } = options;
-  const opts = flattenOptions(cheerioOptions);
-  (_a2 = encoding.defaultEncoding) !== null && _a2 !== void 0 ? _a2 : encoding.defaultEncoding = (opts === null || opts === void 0 ? void 0 : opts.xmlMode) ? "utf8" : "windows-1252";
-  const decodeStream2 = new DecodeStream(encoding);
-  const loadStream = _stringStream(opts, cb);
-  decodeStream2.pipe(loadStream);
-  return decodeStream2;
-}
-const defaultRequestOptions = {
-  method: "GET",
-  // Set an Accept header
-  headers: {
-    accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
-  }
-};
-async function fromURL(url, options = {}) {
-  const { requestOptions = defaultRequestOptions, encoding = {}, ...cheerioOptions } = options;
-  let undiciStream;
-  const urlObject = typeof url === "string" ? new URL(url) : url;
-  const streamOptions = {
-    headers: defaultRequestOptions.headers,
-    path: urlObject.pathname + urlObject.search,
-    ...requestOptions
-  };
-  const promise = new Promise((resolve, reject) => {
-    undiciStream = new undiciExports.Client(urlObject.origin).compose(undiciExports.interceptors.redirect({ maxRedirections: 5 })).stream(streamOptions, (res) => {
-      var _a2, _b;
-      if (res.statusCode < 200 || res.statusCode >= 300) {
-        throw new undiciExports.errors.ResponseError("Response Error", res.statusCode, {
-          headers: res.headers
-        });
-      }
-      const contentTypeHeader = (_a2 = res.headers["content-type"]) !== null && _a2 !== void 0 ? _a2 : "text/html";
-      const mimeType = new MIMEType(Array.isArray(contentTypeHeader) ? contentTypeHeader[0] : contentTypeHeader);
-      if (!mimeType.isHTML() && !mimeType.isXML()) {
-        throw new RangeError(`The content-type "${mimeType.essence}" is neither HTML nor XML.`);
-      }
-      encoding.transportLayerEncodingLabel = mimeType.parameters.get("charset");
-      const history = (_b = res.context) === null || _b === void 0 ? void 0 : _b.history;
-      const baseURI = history ? history[history.length - 1] : urlObject;
-      const opts = {
-        encoding,
-        // Set XML mode based on the MIME type.
-        xmlMode: mimeType.isXML(),
-        baseURI,
-        ...cheerioOptions
-      };
-      return decodeStream(opts, (err, $) => err ? reject(err) : resolve($));
-    });
-  });
-  await undiciStream;
-  return promise;
-}
 export {
-  contains,
-  decodeStream,
-  fromURL,
-  load,
-  loadBuffer,
-  merge,
-  stringStream
+  load as l
 };

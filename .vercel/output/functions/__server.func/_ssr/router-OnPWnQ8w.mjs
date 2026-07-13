@@ -3,13 +3,13 @@ import { Q as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { c as createRouter, a as createRootRouteWithContext, u as useRouter, L as Link, O as Outlet, H as HeadContent, S as Scripts, b as createFileRoute, l as lazyRouteComponent } from "../_libs/tanstack__react-router.mjs";
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { T as Toaster } from "../_libs/sonner.mjs";
-import { c as createServerFn, T as TSS_SERVER_FUNCTION, g as getServerFnById } from "./server-BTmofNUn.mjs";
-import { N as Navigation, g as generateSitemapXml } from "./sitemap-DxlRBYZJ.mjs";
-import "../_libs/seroval.mjs";
-import { G as Globe, C as ChevronDown, N as Network, a as Code, S as Search, L as LoaderCircle, b as CircleAlert, c as Check, D as Download, F as FlaskConical, d as FileText, M as Map, e as Star } from "../_libs/lucide-react.mjs";
+import { c as createServerFn, T as TSS_SERVER_FUNCTION, g as getServerFnById } from "./server-XRDYmVk2.mjs";
+import { G as Globe, C as ChevronDown, N as Network, a as Code, S as Search, L as LoaderCircle, b as CircleAlert, c as Check, D as Download, F as FlaskConical, d as FileText, M as Map, e as Star, X, f as Menu } from "../_libs/lucide-react.mjs";
+import { A as AnimatePresence, m as motion } from "../_libs/framer-motion.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
+import "../_libs/seroval.mjs";
 import "../_libs/seroval-plugins.mjs";
 import "node:stream/web";
 import "node:stream";
@@ -23,7 +23,6 @@ import "node:async_hooks";
 import "../_libs/h3-v2.mjs";
 import "../_libs/rou3.mjs";
 import "../_libs/srvx.mjs";
-import "../_libs/framer-motion.mjs";
 import "../_libs/motion-dom.mjs";
 import "../_libs/motion-utils.mjs";
 const appCss = "/assets/styles-EqQB4b7M.css";
@@ -44,7 +43,7 @@ function NotFoundComponent() {
 }
 function ErrorComponent({ error, reset }) {
   console.error(error);
-  const router = useRouter();
+  const router2 = useRouter();
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-xl font-semibold tracking-tight text-foreground", children: "This page didn't load" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-sm text-muted-foreground", children: "Something went wrong on our end. You can try refreshing or head back home." }),
@@ -53,7 +52,7 @@ function ErrorComponent({ error, reset }) {
         "button",
         {
           onClick: () => {
-            router.invalidate();
+            router2.invalidate();
             reset();
           },
           className: "inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90",
@@ -116,15 +115,15 @@ function RootComponent() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster, { position: "top-center", richColors: true })
   ] });
 }
-const $$splitComponentImporter$3 = () => import("./rss-generator-DbMQI1ku.mjs");
+const $$splitComponentImporter$3 = () => import("./rss-generator-S0N7hWPF.mjs");
 const Route$4 = createFileRoute("/rss-generator")({
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./ecommerce-feeds-Bo2cF6sI.mjs");
+const $$splitComponentImporter$2 = () => import("./ecommerce-feeds-89HJXry-.mjs");
 const Route$3 = createFileRoute("/ecommerce-feeds")({
   component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-const $$splitComponentImporter$1 = () => import("./docs-DUibYkZH.mjs");
+const $$splitComponentImporter$1 = () => import("./docs-DpDHNTnu.mjs");
 const Route$2 = createFileRoute("/docs")({
   component: lazyRouteComponent($$splitComponentImporter$1, "component"),
   head: () => ({
@@ -135,7 +134,7 @@ const Route$2 = createFileRoute("/docs")({
     }]
   })
 });
-const $$splitComponentImporter = () => import("./about-C-ZR1UZL.mjs");
+const $$splitComponentImporter = () => import("./about-BCsOYyzZ.mjs");
 const Route$1 = createFileRoute("/about")({
   component: lazyRouteComponent($$splitComponentImporter, "component"),
   head: () => ({
@@ -146,6 +145,109 @@ const Route$1 = createFileRoute("/about")({
     }]
   })
 });
+function Navigation() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = reactExports.useState(false);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-6xl mx-auto px-6 h-10 hidden md:flex items-center justify-between text-[13px] font-medium text-slate-500 lato-regular", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "hover:text-[#00748b] transition-colors", children: "Tools" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-slate-400", children: "Pro Sitemaps Engine" }) })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-[#f8fafc] border-t border-slate-100", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-6xl mx-auto px-6 h-16 flex items-center justify-between", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "/", className: "flex items-center gap-2 group", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Network, { className: "w-7 h-7 text-[#00748b] transform rotate-90 group-hover:scale-110 transition-transform duration-300" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[22px] font-black tracking-tighter text-slate-800 bricolage-grotesque-main", children: [
+          "MySitemap",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[#00748b]", children: "Generator" })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "hidden md:flex items-center gap-8 rubik-main", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "text-[14px] font-bold text-[#00748b] transition-colors", children: "Sitemap Generator" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/ecommerce-feeds", className: "text-[14px] font-bold text-slate-600 hover:text-[#00748b] transition-colors", children: "eCommerce Feeds" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/rss-generator", className: "text-[14px] font-bold text-slate-600 hover:text-[#00748b] transition-colors", children: "RSS Generator" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          className: "md:hidden text-slate-600",
+          onClick: () => setIsMobileMenuOpen(!isMobileMenuOpen),
+          children: isMobileMenuOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-6 h-6" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { className: "w-6 h-6" })
+        }
+      )
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: isMobileMenuOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      motion.div,
+      {
+        initial: { opacity: 0, height: 0 },
+        animate: { opacity: 1, height: "auto" },
+        exit: { opacity: 0, height: 0 },
+        className: "md:hidden bg-white border-t border-slate-100 overflow-hidden",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col px-6 py-4 gap-4 rubik-main font-bold text-[15px] text-slate-700", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", onClick: () => setIsMobileMenuOpen(false), className: "text-[#00748b]", children: "Sitemap Generator" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/ecommerce-feeds", onClick: () => setIsMobileMenuOpen(false), children: "eCommerce Feeds" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/rss-generator", onClick: () => setIsMobileMenuOpen(false), children: "RSS Generator" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-[1px] w-full bg-slate-100 my-2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-slate-400 text-sm", children: "Pro Sitemaps Engine" })
+        ] })
+      }
+    ) })
+  ] });
+}
+function escapeXml(unsafe) {
+  if (!unsafe) return "";
+  return unsafe.replace(/[<>&'"]/g, (c) => {
+    switch (c) {
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case "&":
+        return "&amp;";
+      case "'":
+        return "&apos;";
+      case '"':
+        return "&quot;";
+      default:
+        return c;
+    }
+  });
+}
+function normalizeUrl(url) {
+  if (!url) return "";
+  return url.replace(/([^:])\/\//g, "$1/").replace(/^\/\//, "/");
+}
+function generateSitemapXml(urls) {
+  const urlset = urls.map(
+    (url) => `
+  <url>
+    <loc>${escapeXml(normalizeUrl(url.loc))}</loc>
+    ${url.lastmod ? `<lastmod>${escapeXml(url.lastmod)}</lastmod>` : ""}
+    ${url.changefreq ? `<changefreq>${escapeXml(url.changefreq)}</changefreq>` : ""}
+    ${url.priority ? `<priority>${escapeXml(url.priority)}</priority>` : ""}
+    ${url.hreflangs?.map((h) => `<xhtml:link rel="alternate" hreflang="${escapeXml(h.lang)}" href="${escapeXml(normalizeUrl(h.href))}" />`).join("") || ""}
+    ${url.images?.map((img) => `
+    <image:image>
+      <image:loc>${escapeXml(normalizeUrl(img.loc))}</image:loc>
+      ${img.caption ? `<image:caption>${escapeXml(img.caption)}</image:caption>` : ""}
+      ${img.title ? `<image:title>${escapeXml(img.title)}</image:title>` : ""}
+    </image:image>`).join("") || ""}
+    ${url.videos?.map((v) => `
+    <video:video>
+      <video:thumbnail_loc>${escapeXml(normalizeUrl(v.thumbnail_loc))}</video:thumbnail_loc>
+      <video:title>${escapeXml(v.title)}</video:title>
+      <video:description>${escapeXml(v.description)}</video:description>
+      ${v.content_loc ? `<video:content_loc>${escapeXml(normalizeUrl(v.content_loc))}</video:content_loc>` : ""}
+      ${v.player_loc ? `<video:player_loc>${escapeXml(normalizeUrl(v.player_loc))}</video:player_loc>` : ""}
+    </video:video>`).join("") || ""}
+  </url>`
+  ).join("");
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urlset}
+</urlset>`;
+}
 var createSsrRpc = (functionId) => {
   const url = "/_serverFn/" + functionId;
   const serverFnMeta = { id: functionId };
@@ -159,69 +261,37 @@ var createSsrRpc = (functionId) => {
   });
 };
 const fetchPageHtml = createServerFn({
-  method: "GET"
-}).handler(createSsrRpc("9cfc38e9b44415ad6c389b4a676fa47153360beb1e12690a186d5ed702712330"));
+  method: "POST"
+}).handler(createSsrRpc("1eb9c965c3accd8968c71a27032f353ce5febfe3106564dc848167eb5a29b1d1"));
 const checkRobotsTxt = createServerFn({
-  method: "GET"
-}).handler(createSsrRpc("ae6c19e73a84f0cbd0a9ae9f8e1489c498f770fdf4b230865bbca81e276bf24b"));
+  method: "POST"
+}).handler(createSsrRpc("55312efa061fa510ac20c8e856917448a68e2ad6e3215227c2e06d4fd1038f7f"));
 const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    meta: [{
-      title: "XML Sitemap Generator - Create Free Sitemaps Online"
-    }, {
-      name: "description",
-      content: "Generate search-engine ready XML, Image, Video, and HTML sitemaps instantly. Free for up to 500 URLs. Improve your SEO and Google Indexing today."
-    }, {
-      name: "keywords",
-      content: "xml sitemap generator, create xml sitemap, free sitemap generator, google sitemap, seo tools, visual sitemap, sitemap creator, indexing tool"
-    }, {
-      name: "robots",
-      content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    }, {
-      name: "author",
-      content: "Sitemap Generator Pro"
-    }, {
-      property: "og:type",
-      content: "website"
-    }, {
-      property: "og:site_name",
-      content: "Sitemap Generator Pro"
-    }, {
-      property: "og:title",
-      content: "XML Sitemap Generator - Create Free Sitemaps Online"
-    }, {
-      property: "og:description",
-      content: "Generate search-engine ready XML, Image, Video, and HTML sitemaps instantly. Free for up to 500 URLs."
-    }, {
-      property: "og:url",
-      content: "https://mysitemapgenerator.com/"
-    }, {
-      name: "twitter:card",
-      content: "summary_large_image"
-    }, {
-      name: "twitter:title",
-      content: "XML Sitemap Generator - Create Free Sitemaps Online"
-    }, {
-      name: "twitter:description",
-      content: "Generate search-engine ready XML, Image, Video, and HTML sitemaps instantly."
-    }, {
-      name: "viewport",
-      content: "width=device-width, initial-scale=1.0"
-    }, {
-      name: "theme-color",
-      content: "#00748b"
-    }],
-    links: [{
-      rel: "canonical",
-      href: "https://mysitemapgenerator.com/"
-    }]
+    meta: [
+      { title: "XML Sitemap Generator - Create Free Sitemaps Online" },
+      { name: "description", content: "Generate search-engine ready XML, Image, Video, and HTML sitemaps instantly. Free for up to 500 URLs. Improve your SEO and Google Indexing today." },
+      { name: "keywords", content: "xml sitemap generator, create xml sitemap, free sitemap generator, google sitemap, seo tools, visual sitemap, sitemap creator, indexing tool" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "author", content: "Sitemap Generator Pro" },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Sitemap Generator Pro" },
+      { property: "og:title", content: "XML Sitemap Generator - Create Free Sitemaps Online" },
+      { property: "og:description", content: "Generate search-engine ready XML, Image, Video, and HTML sitemaps instantly. Free for up to 500 URLs." },
+      { property: "og:url", content: "https://mysitemapgenerator.com/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "XML Sitemap Generator - Create Free Sitemaps Online" },
+      { name: "twitter:description", content: "Generate search-engine ready XML, Image, Video, and HTML sitemaps instantly." },
+      { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+      { name: "theme-color", content: "#00748b" }
+    ],
+    links: [
+      { rel: "canonical", href: "https://mysitemapgenerator.com/" }
+    ]
   })
 });
-function AccordionItem({
-  question,
-  answer
-}) {
+function AccordionItem({ question, answer }) {
   const [isOpen, setIsOpen] = reactExports.useState(false);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-b border-slate-200 py-5", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { onClick: () => setIsOpen(!isOpen), className: "w-full flex items-center justify-between text-left font-bold text-slate-800 hover:text-[#00748b] transition-colors", children: [
@@ -238,14 +308,7 @@ function Index() {
   const [discoveredUrls, setDiscoveredUrls] = reactExports.useState([]);
   const [logs, setLogs] = reactExports.useState([]);
   const [robotsData, setRobotsData] = reactExports.useState(null);
-  const [stats, setStats] = reactExports.useState({
-    pages: 0,
-    images: 0,
-    time: 0,
-    h1Count: 0,
-    wordCount: 0,
-    skipped: 0
-  });
+  const [stats, setStats] = reactExports.useState({ pages: 0, images: 0, time: 0, h1Count: 0, wordCount: 0, skipped: 0 });
   const [settings, setSettings] = reactExports.useState({
     maxPages: 500,
     maxDepth: 3,
@@ -265,29 +328,14 @@ function Index() {
     setStatus("scanning");
     setProgress(0);
     setDiscoveredUrls([]);
-    setLogs([{
-      msg: "🚀 Initializing Crawler...",
-      type: "info"
-    }]);
-    setStats({
-      pages: 0,
-      images: 0,
-      time: 0,
-      h1Count: 0,
-      wordCount: 0,
-      skipped: 0
-    });
+    setLogs([{ msg: "🚀 Initializing Crawler...", type: "info" }]);
+    setStats({ pages: 0, images: 0, time: 0, h1Count: 0, wordCount: 0, skipped: 0 });
     try {
-      const robots = await checkRobotsTxt({
-        data: targetUrl
-      });
+      const robots = await checkRobotsTxt({ data: targetUrl });
       setRobotsData(robots);
       const startTime = Date.now();
       const foundUrls = /* @__PURE__ */ new Set();
-      const queue = [{
-        url: targetUrl,
-        depth: 0
-      }];
+      const queue = [{ url: targetUrl, depth: 0 }];
       const domain = new URL(targetUrl).hostname;
       const MAX_CONCURRENCY = 25;
       let activePromises = 0;
@@ -295,25 +343,17 @@ function Index() {
       const discoveredSet = /* @__PURE__ */ new Set();
       const processNext = async () => {
         if (!isScanning.current || foundUrls.size >= settings.maxPages || queue.length === 0) return;
-        const {
-          url: currentUrl,
-          depth: currentDepth
-        } = queue.shift();
+        const { url: currentUrl, depth: currentDepth } = queue.shift();
         if (foundUrls.has(currentUrl)) return;
         foundUrls.add(currentUrl);
-        setLogs((prev) => [...prev.slice(-9), {
-          msg: `→ Scanning: ${currentUrl}`,
-          type: "pending"
-        }]);
+        setLogs((prev) => [...prev.slice(-9), { msg: `→ Scanning: ${currentUrl}`, type: "pending" }]);
         activePromises++;
         try {
-          const result = await fetchPageHtml({
-            data: {
-              url: currentUrl,
-              useJS: settings.useJS
-            }
-          });
-          if (!result.error) {
+          const result = await fetchPageHtml({ data: { url: currentUrl, useJS: settings.useJS } });
+          if (result.error) {
+            setLogs((prev) => [...prev.slice(-9), { msg: `Error: ${result.error}`, type: "error" }]);
+            skippedCount++;
+          } else {
             setDiscoveredUrls([...foundUrls]);
             if (currentDepth < settings.maxDepth) {
               for (const link of result.links || []) {
@@ -328,10 +368,7 @@ function Index() {
                       if (clean.match(/\.(pdf|jpg|jpeg|png|gif|zip|exe|dmg|iso|mp4|css|js)$/i)) {
                         skippedCount++;
                       } else if (!foundUrls.has(clean)) {
-                        queue.push({
-                          url: clean,
-                          depth: currentDepth + 1
-                        });
+                        queue.push({ url: clean, depth: currentDepth + 1 });
                       }
                     } else {
                       skippedCount++;
@@ -341,16 +378,16 @@ function Index() {
                 }
               }
             }
-            setStats((prev) => ({
-              ...prev,
-              pages: foundUrls.size,
-              skipped: skippedCount,
-              images: prev.images + (result.images?.length || 0)
-            }));
-            const totalKnown = foundUrls.size + queue.length;
-            const calculatedProgress = totalKnown === 0 ? 0 : foundUrls.size / totalKnown * 100;
-            setProgress((prev) => Math.max(prev, Math.min(calculatedProgress, 99)));
           }
+          setStats((prev) => ({
+            ...prev,
+            pages: foundUrls.size,
+            skipped: skippedCount,
+            images: prev.images + (result.images?.length || 0)
+          }));
+          const totalKnown = foundUrls.size + queue.length;
+          const calculatedProgress = totalKnown === 0 ? 0 : foundUrls.size / totalKnown * 100;
+          setProgress((prev) => Math.max(prev, Math.min(calculatedProgress, 99)));
         } catch (err) {
           console.error("Crawl error:", err);
         } finally {
@@ -364,10 +401,7 @@ function Index() {
           await new Promise((r) => setTimeout(r, 50));
         }
       }
-      setStats((prev) => ({
-        ...prev,
-        time: (Date.now() - startTime) / 1e3
-      }));
+      setStats((prev) => ({ ...prev, time: (Date.now() - startTime) / 1e3 }));
       setStatus("completed");
       const xml = generateSitemapXml([...foundUrls].map((u) => ({
         loc: u,
@@ -383,9 +417,7 @@ function Index() {
     }
   };
   const downloadXml = () => {
-    const blob = new Blob([xmlPreview], {
-      type: "application/xml"
-    });
+    const blob = new Blob([xmlPreview], { type: "application/xml" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = `sitemap.xml`;
@@ -407,7 +439,16 @@ function Index() {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleGenerate, className: "max-w-4xl mx-auto bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col md:flex-row items-center p-2 mb-8", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 w-full flex items-center px-4 py-2 md:py-0 border-b border-slate-200 md:border-b-0", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { className: "w-5 h-5 text-slate-400 shrink-0 mr-3" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", value: url, onChange: (e) => setUrl(e.target.value), placeholder: "https:// Website URL", className: "w-full bg-transparent outline-none text-slate-700 placeholder:text-slate-400 font-medium" })
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "input",
+                  {
+                    type: "text",
+                    value: url,
+                    onChange: (e) => setUrl(e.target.value),
+                    placeholder: "https:// Website URL",
+                    className: "w-full bg-transparent outline-none text-slate-700 placeholder:text-slate-400 font-medium"
+                  }
+                )
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-[1px] h-8 bg-slate-200 hidden md:block mx-2" }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full md:w-48 px-2 py-2 md:py-0 border-b border-slate-200 md:border-b-0 flex items-center", children: [
@@ -418,7 +459,15 @@ function Index() {
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "w-4 h-4 text-slate-400 pointer-events-none" })
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", disabled: !url.trim(), className: "w-full md:w-auto mt-4 md:mt-0 bg-[#00748b] hover:bg-[#006074] text-white px-8 py-3.5 rounded-md text-[15px] font-bold transition-all disabled:opacity-50 whitespace-nowrap shadow-[0_4px_14px_0_rgba(0,116,139,0.39)] hover:shadow-[0_6px_20px_rgba(0,116,139,0.23)] hover:-translate-y-0.5 rubik-main", children: "Start creating" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "submit",
+                  disabled: !url.trim(),
+                  className: "w-full md:w-auto mt-4 md:mt-0 bg-[#00748b] hover:bg-[#006074] text-white px-8 py-3.5 rounded-md text-[15px] font-bold transition-all disabled:opacity-50 whitespace-nowrap shadow-[0_4px_14px_0_rgba(0,116,139,0.39)] hover:shadow-[0_6px_20px_rgba(0,116,139,0.23)] hover:-translate-y-0.5 rubik-main",
+                  children: "Start creating"
+                }
+              )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-500 text-[13px] mb-12 font-medium", children: "Start generating in seconds." }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-center gap-4 mb-8", children: [
@@ -444,9 +493,7 @@ function Index() {
             ] })
           ] }),
           status === "scanning" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "animate-in fade-in max-w-5xl mx-auto mt-12 bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xl relative text-left", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 left-0 w-full h-1.5 bg-slate-100", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full bg-[#00748b] transition-all duration-300 relative", style: {
-              width: `${progress}%`
-            }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-r from-transparent to-white/40 animate-[shimmer_1s_infinite]" }) }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 left-0 w-full h-1.5 bg-slate-100", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full bg-[#00748b] transition-all duration-300 relative", style: { width: `${progress}%` }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-r from-transparent to-white/40 animate-[shimmer_1s_infinite]" }) }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-[1.3fr_1fr] gap-0", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 md:p-10 flex flex-col h-full border-b md:border-b-0 border-slate-200 relative z-10", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mb-8", children: [
@@ -465,9 +512,7 @@ function Index() {
                         "%"
                       ] })
                     ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full bg-slate-200 rounded-full h-2.5 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-[#00748b] h-full transition-all duration-300", style: {
-                      width: `${progress}%`
-                    } }) })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full bg-slate-200 rounded-full h-2.5 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-[#00748b] h-full transition-all duration-300", style: { width: `${progress}%` } }) })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-slate-50 rounded-xl p-4 border border-slate-100", children: [
@@ -519,9 +564,17 @@ function Index() {
                       /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "w-6 h-6 animate-spin text-[#00748b]" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-bold uppercase tracking-widest text-slate-400", children: "Capturing visual..." })
                     ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&embed=screenshot.url`, alt: "Website Preview", className: "absolute inset-0 w-full h-full object-cover object-top relative z-10 transition-opacity duration-1000 opacity-0", onLoad: (e) => {
-                      e.currentTarget.style.opacity = "1";
-                    } })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "img",
+                      {
+                        src: `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&embed=screenshot.url`,
+                        alt: "Website Preview",
+                        className: "absolute inset-0 w-full h-full object-cover object-top relative z-10 transition-opacity duration-1000 opacity-0",
+                        onLoad: (e) => {
+                          e.currentTarget.style.opacity = "1";
+                        }
+                      }
+                    )
                   ] })
                 ] })
               ] })
@@ -583,7 +636,14 @@ function Index() {
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:block w-[320px] aspect-[16/10] border border-slate-200 rounded-lg overflow-hidden relative bg-white shrink-0 self-start mt-8", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex flex-col items-center justify-center text-slate-400 gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "w-5 h-5 animate-spin text-slate-300" }) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&embed=screenshot.url`, alt: "Website Preview", className: "absolute inset-0 w-full h-full object-cover object-top relative z-10 animate-in fade-in duration-1000" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "img",
+                      {
+                        src: `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&embed=screenshot.url`,
+                        alt: "Website Preview",
+                        className: "absolute inset-0 w-full h-full object-cover object-top relative z-10 animate-in fade-in duration-1000"
+                      }
+                    )
                   ] })
                 ] })
               ] }),
@@ -605,13 +665,7 @@ function Index() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-500 font-bold", children: "Starting URL" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[#00748b] font-bold break-all hover:underline cursor-pointer", children: url }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-500 font-bold", children: "Updated on" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-800 font-medium", children: (/* @__PURE__ */ new Date()).toLocaleString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-                hour: "numeric",
-                minute: "2-digit"
-              }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-800 font-medium", children: (/* @__PURE__ */ new Date()).toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" }) }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-500 font-bold", children: "Pages indexed" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-800 font-medium", children: stats.pages })
             ] }) }),
@@ -648,16 +702,58 @@ function Index() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-white py-20 px-6 border-t border-slate-200 mt-20", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl mx-auto", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl font-bold text-slate-800 mb-8 tracking-tight text-center", children: "Frequently Asked Questions about XML Sitemaps" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-16", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionItem, { question: "What is a sitemap?", answer: "A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them. Search engines like Google read this file to more intelligently crawl your site." }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionItem, { question: "Why do I need an XML sitemap?", answer: "XML sitemaps help search engines navigate your website and discover new or updated content quickly. This is especially important for large websites, new websites with few external links, or sites with rich media content." }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionItem, { question: "How does this sitemap generator work?", answer: "Our tool acts like a search engine bot. It starts at your homepage, finds all internal links, and follows them to map out your entire website structure automatically. It then formats this data into standard XML, HTML, or Visual formats." }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionItem, { question: "Is this sitemap generator free to use?", answer: "Yes! Our public generator allows you to create search-engine ready sitemaps for free up to a certain page limit. For larger websites, we offer premium Pro plans with automatic syncing." }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionItem, { question: "How do I submit my sitemap to Google?", answer: "Once generated, download your XML file and upload it to the root folder of your website (e.g., yourdomain.com/sitemap.xml). Then, log into Google Search Console, navigate to the 'Sitemaps' section, and enter your sitemap's URL to submit it." })
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              AccordionItem,
+              {
+                question: "What is a sitemap?",
+                answer: "A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them. Search engines like Google read this file to more intelligently crawl your site."
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              AccordionItem,
+              {
+                question: "Why do I need an XML sitemap?",
+                answer: "XML sitemaps help search engines navigate your website and discover new or updated content quickly. This is especially important for large websites, new websites with few external links, or sites with rich media content."
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              AccordionItem,
+              {
+                question: "How does this sitemap generator work?",
+                answer: "Our tool acts like a search engine bot. It starts at your homepage, finds all internal links, and follows them to map out your entire website structure automatically. It then formats this data into standard XML, HTML, or Visual formats."
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              AccordionItem,
+              {
+                question: "Is this sitemap generator free to use?",
+                answer: "Yes! Our public generator allows you to create search-engine ready sitemaps for free up to a certain page limit. For larger websites, we offer premium Pro plans with automatic syncing."
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              AccordionItem,
+              {
+                question: "How do I submit my sitemap to Google?",
+                answer: "Once generated, download your XML file and upload it to the root folder of your website (e.g., yourdomain.com/sitemap.xml). Then, log into Google Search Console, navigate to the 'Sitemaps' section, and enter your sitemap's URL to submit it."
+              }
+            )
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl font-bold text-slate-800 mb-8 tracking-tight text-center", children: "Visual Sitemap FAQs" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionItem, { question: "What is a visual sitemap?", answer: "A visual sitemap is a diagram that shows the hierarchical structure of a website. Unlike XML sitemaps built for search engines, visual sitemaps are designed for humans to plan UI/UX, website architecture, and content strategy." }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionItem, { question: "How do I create a visual sitemap?", answer: "Select 'Visual Sitemap' from the dropdown in our generator above, enter your URL, and click 'Start creating'. We will automatically crawl your site and generate a beautiful, exportable flowchart of your website's pages." })
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              AccordionItem,
+              {
+                question: "What is a visual sitemap?",
+                answer: "A visual sitemap is a diagram that shows the hierarchical structure of a website. Unlike XML sitemaps built for search engines, visual sitemaps are designed for humans to plan UI/UX, website architecture, and content strategy."
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              AccordionItem,
+              {
+                question: "How do I create a visual sitemap?",
+                answer: "Select 'Visual Sitemap' from the dropdown in our generator above, enter your URL, and click 'Start creating'. We will automatically crawl your site and generate a beautiful, exportable flowchart of your website's pages."
+              }
+            )
           ] })
         ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "bg-[#f8fafc] py-20 px-6 border-t border-slate-200", children: [
@@ -670,31 +766,14 @@ function Index() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl font-bold text-slate-800 mb-4 tracking-tight", children: "Try Quick File Creation with Public Free" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-600 text-[15px] leading-relaxed max-w-2xl mx-auto", children: "With our Public Free plan, you get up to 3 free file creation requests per day, even without registering an account. It's a simple way to test our tools and generate essential website files instantly." })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-6", children: [{
-              title: "XML Sitemap Generator",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Code, { className: "w-6 h-6 text-[#00748b]" }),
-              desc: "Standard XML format for Google & Bing."
-            }, {
-              title: "Visual Sitemap Generator",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Map, { className: "w-6 h-6 text-[#00b87c]" }),
-              desc: "Beautiful flowcharts for UX planning."
-            }, {
-              title: "HTML Sitemap Generator",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-6 h-6 text-blue-500" }),
-              desc: "Human-readable directory for visitors."
-            }, {
-              title: "RSS Feed Generator",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Network, { className: "w-6 h-6 text-orange-500" }),
-              desc: "Automated content syndication feeds."
-            }, {
-              title: "Product Feed Generator",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Star, { className: "w-6 h-6 text-purple-500" }),
-              desc: "Data feeds for Google Shopping & Ads."
-            }, {
-              title: "Yandex YML Generator",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { className: "w-6 h-6 text-red-500" }),
-              desc: "Format optimized for Yandex services."
-            }].map((card, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col items-center text-center", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-6", children: [
+              { title: "XML Sitemap Generator", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Code, { className: "w-6 h-6 text-[#00748b]" }), desc: "Standard XML format for Google & Bing." },
+              { title: "Visual Sitemap Generator", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Map, { className: "w-6 h-6 text-[#00b87c]" }), desc: "Beautiful flowcharts for UX planning." },
+              { title: "HTML Sitemap Generator", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-6 h-6 text-blue-500" }), desc: "Human-readable directory for visitors." },
+              { title: "RSS Feed Generator", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Network, { className: "w-6 h-6 text-orange-500" }), desc: "Automated content syndication feeds." },
+              { title: "Product Feed Generator", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Star, { className: "w-6 h-6 text-purple-500" }), desc: "Data feeds for Google Shopping & Ads." },
+              { title: "Yandex YML Generator", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { className: "w-6 h-6 text-red-500" }), desc: "Format optimized for Yandex services." }
+            ].map((card, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer flex flex-col items-center text-center", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center mb-4 border border-slate-100", children: card.icon }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-bold text-slate-800 mb-2", children: card.title }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-500 text-[13px]", children: card.desc })
@@ -761,14 +840,19 @@ const rootRouteChildren = {
 const routeTree = Route$5._addFileChildren(rootRouteChildren)._addFileTypes();
 const getRouter = () => {
   const queryClient = new QueryClient();
-  const router = createRouter({
+  const router2 = createRouter({
     routeTree,
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0
   });
-  return router;
+  return router2;
 };
-export {
+const router = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
   getRouter
+}, Symbol.toStringTag, { value: "Module" }));
+export {
+  Navigation as N,
+  router as r
 };

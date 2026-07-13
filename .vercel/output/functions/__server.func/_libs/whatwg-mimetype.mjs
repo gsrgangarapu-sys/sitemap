@@ -1,4 +1,3 @@
-import { g as getDefaultExportFromCjs } from "./react.mjs";
 var utils = {};
 var hasRequiredUtils;
 function requireUtils() {
@@ -336,8 +335,4 @@ function requireMimeType() {
   };
   return mimeType;
 }
-var mimeTypeExports = requireMimeType();
-const MIMEType = /* @__PURE__ */ getDefaultExportFromCjs(mimeTypeExports);
-export {
-  MIMEType as M
-};
+requireMimeType();

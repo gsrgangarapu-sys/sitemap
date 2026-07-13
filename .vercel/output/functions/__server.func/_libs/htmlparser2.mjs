@@ -1154,11 +1154,6 @@ function parseDocument(data, options) {
   new Parser(handler, options).end(data);
   return handler.root;
 }
-function createDocumentStream(callback, options, elementCallback) {
-  const handler = new DomHandler((error) => callback(error, handler.root), options, elementCallback);
-  return new Parser(handler, options);
-}
 export {
-  createDocumentStream as c,
   parseDocument as p
 };

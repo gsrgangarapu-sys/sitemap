@@ -404,7 +404,4 @@ function requireWhatwgEncoding() {
   })(whatwgEncoding);
   return whatwgEncoding;
 }
-var whatwgEncodingExports = requireWhatwgEncoding();
-export {
-  whatwgEncodingExports as w
-};
+requireWhatwgEncoding();

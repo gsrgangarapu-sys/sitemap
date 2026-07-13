@@ -1,7 +1,7 @@
 let serverEntryPromise;
 async function getServerEntry() {
   if (!serverEntryPromise) {
-    serverEntryPromise = import("./server-BTmofNUn.mjs").then((n) => n.s).then(
+    serverEntryPromise = import("./server-XRDYmVk2.mjs").then((n) => n.s).then(
       (m) => m.default ?? m
     );
   }
